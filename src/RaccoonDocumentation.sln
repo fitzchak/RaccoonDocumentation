@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaccoonDocumentation.Web", "RaccoonDocumentation.Web\RaccoonDocumentation.Web.csproj", "{284BF839-E5AF-4290-A5B7-89B928D2F5F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RaccoonDocumentation.IntegrationTests", "RaccoonDocumentation.IntegrationTests\RaccoonDocumentation.IntegrationTests.csproj", "{DD699AD1-6F88-4975-8C2B-E44933C1E25A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{284BF839-E5AF-4290-A5B7-89B928D2F5F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{284BF839-E5AF-4290-A5B7-89B928D2F5F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{284BF839-E5AF-4290-A5B7-89B928D2F5F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD699AD1-6F88-4975-8C2B-E44933C1E25A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD699AD1-6F88-4975-8C2B-E44933C1E25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD699AD1-6F88-4975-8C2B-E44933C1E25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD699AD1-6F88-4975-8C2B-E44933C1E25A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
