@@ -1,7 +1,9 @@
-﻿namespace RaccoonDocumentation.Web.ViewModels
+﻿using System.Web.Mvc;
+
+namespace RaccoonDocumentation.Web.ViewModels
 {
 	public class DocumentationPageViewModel
 	{
-		public string Content { get; set; }
+		public MvcHtmlString Content { get; set; }
 	}
 }

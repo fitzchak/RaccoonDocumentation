@@ -75,6 +75,7 @@
     <Compile Include="Infrastructure\AutoMapper\AutoMapperExtensions.cs" />
     <Compile Include="Infrastructure\AutoMapper\Profiles\Resolvers\MarkdownResolver.cs" />
     <Compile Include="Infrastructure\AutoMapper\Profiles\DocumentationMapperProfiler.cs" />
+    <Compile Include="Infrastructure\AutoMapper\Profiles\Resolvers\MvcHtmlStringConverter.cs" />
     <Compile Include="Models\DocumentationItem.cs" />
     <Compile Include="Models\DocumentationItemResolved.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
