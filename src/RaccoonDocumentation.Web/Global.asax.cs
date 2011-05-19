@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using RaccoonDocumentation.Web.Infrastructure.AutoMapper;
 
 namespace RaccoonDocumentation.Web
 {
@@ -33,6 +34,8 @@ namespace RaccoonDocumentation.Web
 
 			RegisterGlobalFilters(GlobalFilters.Filters);
 			new RouteConfigurator(RouteTable.Routes).Configure();
+
+			AutoMapperConfiguration.Configure();
 		}
 	}
 }
