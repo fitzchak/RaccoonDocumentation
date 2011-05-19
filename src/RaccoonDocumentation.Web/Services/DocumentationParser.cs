@@ -54,7 +54,7 @@ namespace RaccoonDocumentation.Web.Services
 		{
 			var startText = string.Format("#region {0}", section);
 			var start = file.IndexOf(startText) + startText.Length;
-			var end = file.IndexOf("#endregion");
+			var end = file.IndexOf("#endregion", start);
 			var sectionContent = file.Substring(start, end - start);
 			return sectionContent.Trim(Environment.NewLine.ToCharArray());
 		}
