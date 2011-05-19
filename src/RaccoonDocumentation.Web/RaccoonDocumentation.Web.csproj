@@ -82,6 +82,7 @@
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="RouteConfigurator.cs" />
     <Compile Include="Services\DocumentationLocator.cs" />
+    <Compile Include="Services\DocumentationParser.cs" />
     <Compile Include="Services\DocumentationResolver.cs" />
     <Compile Include="Services\MenuService.cs" />
     <Compile Include="ViewModels\DocumentationPageViewModel.cs" />
