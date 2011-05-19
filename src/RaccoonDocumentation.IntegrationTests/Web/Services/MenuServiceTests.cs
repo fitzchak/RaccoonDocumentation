@@ -14,5 +14,21 @@ namespace RaccoonDocumentation.IntegrationTests.Web.Services
 			Assert.Equal("/intro", result.Slug);
 			Assert.Equal("Intro", result.Title);
 		}
+
+		[Fact]
+		public void ParseLine_ReturnsMenuItem_WithNotRegularSpaceSeparator()
+		{
+			var result = service.ParseLine("/intro	Intro");
+			Assert.Equal("/intro", result.Slug);
+			Assert.Equal("Intro", result.Title);
+		}
+
+		[Fact]
+		public void ParseLine_ReturnsMenuItem_WithTitleContainsSpaces()
+		{
+			var result = service.ParseLine("/consumer	Consumer usage");
+			Assert.Equal("/consumer", result.Slug);
+			Assert.Equal("Consumer usage", result.Title);
+		}
 	}
 }
