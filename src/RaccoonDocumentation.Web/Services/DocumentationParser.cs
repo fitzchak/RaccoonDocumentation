@@ -9,6 +9,7 @@ namespace RaccoonDocumentation.Web.Services
 	public static class DocumentationParser
 	{
 		static readonly Regex CodeFinder = new Regex(@"{CODE(.+)/}", RegexOptions.Compiled);
+		static readonly Regex FirstLineSpacesFinder = new Regex(@"^(\s|\t)+", RegexOptions.Compiled);
 
 		public static string ParesDocumentation(this string content)
 		{
@@ -30,8 +31,23 @@ namespace RaccoonDocumentation.Web.Services
 		private static string ConvertMarkdownCodeStatment(string code)
 		{
 			var line = code.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
-			var formattedLines = line.Select(l => string.Format("    {0}", l));
+			var firstLineSpaces = GetFirstLineSpaces(line.FirstOrDefault());
+			var firstLineSpacesLength = firstLineSpaces.Length;
+			var formattedLines = line.Select(l => string.Format("    {0}", l.Substring(l.Length < firstLineSpacesLength ? 0 : firstLineSpacesLength)));
 			return string.Join(Environment.NewLine, formattedLines);
+		}
+
+		private static string GetFirstLineSpaces(string firstLine)
+		{
+			if (firstLine == null)
+				return string.Empty;
+			
+			var match = FirstLineSpacesFinder.Match(firstLine);
+			if (match.Success)
+			{
+				return firstLine.Substring(0, match.Length);
+			}
+			return string.Empty;
 		}
 
 		private static string ExtractSection(string section, string file)
