@@ -20,6 +20,8 @@ namespace RaccoonDocumentation.Web
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 			routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
 
+			ConfigureDocumentation();
+
 			#region "Default"
 
 			routes.MapRouteLowerCase("Default",
@@ -28,6 +30,14 @@ namespace RaccoonDocumentation.Web
 				);
 
 			#endregion
+		}
+
+		private void ConfigureDocumentation()
+		{
+			routes.MapRouteLowerCase("Documentation",
+			  "{slug}",
+			  new { controller = "Documentation", action = "Index" }
+			  );
 		}
 	}
 }

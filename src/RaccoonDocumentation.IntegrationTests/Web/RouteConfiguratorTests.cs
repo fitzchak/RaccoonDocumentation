@@ -7,9 +7,9 @@ using Xunit;
 
 namespace RaccoonDocumentation.IntegrationTests.Web
 {
-	public class RoutesTests : IDisposable
+	public class RouteConfiguratorTests : IDisposable
 	{
-		public RoutesTests()
+		public RouteConfiguratorTests()
 		{
 			new RouteConfigurator(RouteTable.Routes).Configure();
 		}
@@ -23,6 +23,13 @@ namespace RaccoonDocumentation.IntegrationTests.Web
 		public void DefaultRoute()
 		{
 			"~/".ShouldMapTo<DocumentationController>(c => c.Index("/"));
+		}
+
+		[Fact]
+		public void DocumentationControllerRoutes()
+		{
+			"~/intro".ShouldMapTo<DocumentationController>(c => c.Index("/intro"));
+			"~/intro/what-is-nosql".ShouldMapTo<DocumentationController>(c => c.Index("/intro/what-is-nosql"));
 		}
 	}
 }
