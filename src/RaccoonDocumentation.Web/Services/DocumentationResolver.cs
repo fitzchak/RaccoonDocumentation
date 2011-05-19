@@ -13,10 +13,11 @@ namespace RaccoonDocumentation.Web.Services
 			if (documentationItem == null)
 				return null;
 
-			resolved.Content = documentationItem.Content.ParesDocumentation();
-			resolved.Menu = new MenuService()
-				.ParseAll(documentationItem.Menu)
-				.ToList();
+			var content = documentationItem.Content
+				.ParesDocumentation()
+				.ParseDocsList(documentationItem.Menu, slug);
+
+			resolved.Content = content;
 
 			return resolved;
 		}
