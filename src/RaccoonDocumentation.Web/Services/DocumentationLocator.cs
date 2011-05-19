@@ -30,7 +30,7 @@ namespace RaccoonDocumentation.Web.Services
 
 			var item = new DocumentationItem();
 			item.Content = File.ReadAllText(slugPath);
-			item.Menu = File.ReadAllText(slugPath);
+			item.Menu = File.ReadAllText(Path.Combine(Directory.GetParent(slugPath).FullName, ".docslist"));
 			return item;
 		}
 	}
