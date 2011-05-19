@@ -37,9 +37,9 @@ namespace RaccoonDocumentation.Web.Services
 		private static string ExtractSection(string section, string file)
 		{
 			var startText = string.Format("#region {0}", section);
-			var start = file.IndexOf(startText);
+			var start = file.IndexOf(startText) + startText.Length;
 			var end = file.IndexOf("#endregion");
-			var sectionContent = file.Substring(start + startText.Length, end - start);
+			var sectionContent = file.Substring(start, end - start);
 			return sectionContent;
 		}
 
