@@ -9,8 +9,8 @@ namespace RaccoonDocumentation.Web.Controllers
 	{
 		public ActionResult Index(string slug)
 		{
-			var documentationResolver = new DocumentationResolver();
-			var documentationItem = documentationResolver.Resolve(slug);
+			var resolver = new DocumentationResolver();
+			var documentationItem = resolver.Resolve(slug);
 			if (documentationItem == null)
 				return HttpNotFound("Slug not exist");
 
