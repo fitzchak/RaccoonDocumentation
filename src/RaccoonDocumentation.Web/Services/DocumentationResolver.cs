@@ -10,6 +10,9 @@ namespace RaccoonDocumentation.Web.Services
 			var resolved = new DocumentationItemResolved();
 
 			var documentationItem = new DocumentationLocator().Get(slug);
+			if (documentationItem == null)
+				return null;
+
 			resolved.Content = documentationItem.Content;
 			resolved.Menu = new MenuService()
 				.ParseAll(documentationItem.Menu)
