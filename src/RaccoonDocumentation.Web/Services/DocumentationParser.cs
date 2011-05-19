@@ -13,7 +13,8 @@ namespace RaccoonDocumentation.Web.Services
 
 		public static string ParesDocumentation(this string content)
 		{
-			return CodeFinder.Replace(content, match => GenerateCodeStatemnt(match.Groups[1].Value.Trim()));
+			content = CodeFinder.Replace(content, match => GenerateCodeStatemnt(match.Groups[1].Value.Trim()));
+			return content;
 		}
 
 		private static string GenerateCodeStatemnt(string value)
