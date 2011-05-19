@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -47,13 +48,14 @@ namespace RaccoonDocumentation.Web.Services
 			return lines.Select(ParseLine);
 		}
 
-		public static string ParseDocsList(this string content, string menu, string slug)
+		public static string ParseDocsList(this string content, string path, string slug)
 		{
-			return DocsListFinder.Replace(content, match => GenerateDocsListMenu(menu, slug));
+			return DocsListFinder.Replace(content, match => GenerateDocsListMenu(path, slug));
 		}
 
-		private static string GenerateDocsListMenu(string menu, string slug)
+		private static string GenerateDocsListMenu(string path, string slug)
 		{
+			var menu = File.ReadAllText(Path.Combine(Directory.GetParent(path).FullName, ".docslist"));
 			var result = ParseAll(menu)
 				.Select(item => string.Format("- [{0}]({1})", item.Title, UrlHelper.Action("Index", "Documentation", new { slug = slug + "/" + item.Slug })));
 			return string.Join(Environment.NewLine, result);

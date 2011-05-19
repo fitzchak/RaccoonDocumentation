@@ -77,11 +77,9 @@
     <Compile Include="Infrastructure\AutoMapper\Profiles\DocumentationMapperProfiler.cs" />
     <Compile Include="Infrastructure\AutoMapper\Profiles\Resolvers\MvcHtmlStringConverter.cs" />
     <Compile Include="Models\DocumentationItem.cs" />
-    <Compile Include="Models\DocumentationItemResolved.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="RouteConfigurator.cs" />
-    <Compile Include="Services\DocumentationLocator.cs" />
     <Compile Include="Services\DocumentationParser.cs" />
     <Compile Include="Services\DocumentationResolver.cs" />
     <Compile Include="Services\DocsListParser.cs" />

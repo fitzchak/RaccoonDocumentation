@@ -9,7 +9,7 @@ namespace RaccoonDocumentation.Web.Infrastructure.AutoMapper.Profiles
 	{
 		protected override void Configure()
 		{
-			Mapper.CreateMap<DocumentationItemResolved, DocumentationPageViewModel>()
+			Mapper.CreateMap<DocumentationItem, DocumentationPageViewModel>()
 				.ForMember(x => x.Content, o => o.MapFrom(m => MarkdownResolver.Resolve(m.Content)))
 				;
 		}
