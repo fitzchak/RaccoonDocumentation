@@ -40,7 +40,7 @@ namespace RaccoonDocumentation.Web.Services
 			var start = file.IndexOf(startText) + startText.Length;
 			var end = file.IndexOf("#endregion");
 			var sectionContent = file.Substring(start, end - start);
-			return sectionContent;
+			return sectionContent.Trim(Environment.NewLine.ToCharArray());
 		}
 
 		private static string LocateFile(string file)
