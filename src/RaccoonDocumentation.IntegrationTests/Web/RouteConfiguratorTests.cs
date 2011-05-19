@@ -22,14 +22,14 @@ namespace RaccoonDocumentation.IntegrationTests.Web
 		[Fact]
 		public void DefaultRoute()
 		{
-			"~/".ShouldMapTo<DocumentationController>(c => c.Index("/"));
+			"~/".ShouldMapTo<DocumentationController>(c => c.Index(null));
 		}
 
 		[Fact]
 		public void DocumentationControllerRoutes()
 		{
-			"~/intro".ShouldMapTo<DocumentationController>(c => c.Index("/intro"));
-			"~/intro/what-is-nosql".ShouldMapTo<DocumentationController>(c => c.Index("/intro/what-is-nosql"));
+			"~/intro".ShouldMapTo<DocumentationController>(c => c.Index("intro"));
+			"~/intro/what-is-nosql".ShouldMapTo<DocumentationController>(c => c.Index("intro/what-is-nosql"));
 		}
 	}
 }

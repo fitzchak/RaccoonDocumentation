@@ -26,7 +26,7 @@ namespace RaccoonDocumentation.Web
 
 			routes.MapRouteLowerCase("Default",
 				"",
-				new { controller = "Documentation", action = "Index", slug = "/" }
+				new { controller = "Home", action = "Index" }
 				);
 
 			#endregion
@@ -35,8 +35,8 @@ namespace RaccoonDocumentation.Web
 		private void ConfigureDocumentation()
 		{
 			routes.MapRouteLowerCase("Documentation",
-			  "{slug}",
-			  new { controller = "Documentation", action = "Index" }
+			  "{*slug}",
+			  new { controller = "Documentation", action = "Index", slug = UrlParameter.Optional }
 			  );
 		}
 	}
