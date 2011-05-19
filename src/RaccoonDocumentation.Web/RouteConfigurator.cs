@@ -36,7 +36,7 @@ namespace RaccoonDocumentation.Web
 		{
 			routes.MapRouteLowerCase("Documentation",
 			  "{*slug}",
-			  new { controller = "Documentation", action = "Index", slug = UrlParameter.Optional }
+			  new { controller = "Documentation", action = "Index", slug = string.Empty }
 			  );
 		}
 	}

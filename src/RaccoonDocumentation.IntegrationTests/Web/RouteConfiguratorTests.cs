@@ -22,7 +22,7 @@ namespace RaccoonDocumentation.IntegrationTests.Web
 		[Fact]
 		public void DefaultRoute()
 		{
-			"~/".ShouldMapTo<DocumentationController>(c => c.Index(null));
+			"~/".ShouldMapTo<DocumentationController>(c => c.Index(string.Empty));
 		}
 
 		[Fact]
