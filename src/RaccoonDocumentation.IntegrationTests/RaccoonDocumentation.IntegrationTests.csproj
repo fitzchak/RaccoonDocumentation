@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Infrastructure\AutoMapper\AutoMapperConfigurationTester.cs" />
     <Compile Include="Web\RouteConfiguratorTests.cs" />
-    <Compile Include="Web\Services\MenuServiceTests.cs" />
+    <Compile Include="Web\Services\DocsListParserTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

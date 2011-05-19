@@ -84,7 +84,7 @@
     <Compile Include="Services\DocumentationLocator.cs" />
     <Compile Include="Services\DocumentationParser.cs" />
     <Compile Include="Services\DocumentationResolver.cs" />
-    <Compile Include="Services\MenuService.cs" />
+    <Compile Include="Services\DocsListParser.cs" />
     <Compile Include="ViewModels\DocumentationPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
