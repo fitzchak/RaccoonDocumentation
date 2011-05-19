@@ -22,6 +22,9 @@ namespace RaccoonDocumentation.Web.Services
 			var slugPath = Path.Combine(docsPath, slug);
 			if (Directory.Exists(slugPath))
 				slugPath = Path.Combine(slugPath, "index.markdown");
+			else
+				slugPath += ".markdown";
+
 			if (File.Exists(slugPath) == false)
 				return null;
 
