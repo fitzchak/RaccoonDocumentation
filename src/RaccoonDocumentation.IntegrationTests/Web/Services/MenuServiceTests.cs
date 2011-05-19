@@ -1,4 +1,5 @@
-﻿using RaccoonDocumentation.Web.Services;
+﻿using System.Linq;
+using RaccoonDocumentation.Web.Services;
 using Xunit;
 
 namespace RaccoonDocumentation.IntegrationTests.Web.Services
@@ -29,6 +30,20 @@ namespace RaccoonDocumentation.IntegrationTests.Web.Services
 			var result = service.ParseLine("/consumer	Consumer usage");
 			Assert.Equal("/consumer", result.Slug);
 			Assert.Equal("Consumer usage", result.Title);
+		}
+
+		[Fact]
+		public void ParesAll_ReturnsAllMenuItems()
+		{
+			var result = service.ParseAll(@"/intro	Intro
+/theory	Theory
+/consumer	Consumer usage
+/server	Server side
+/studio	The Studio
+/ravenlight	RavenLight
+/appendixes	Appendixes");
+
+			Assert.Equal(7, result.Count());
 		}
 	}
 }

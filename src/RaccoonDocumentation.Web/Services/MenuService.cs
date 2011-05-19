@@ -1,4 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using RaccoonDocumentation.Web.Models;
 
 namespace RaccoonDocumentation.Web.Services
@@ -32,6 +35,12 @@ namespace RaccoonDocumentation.Web.Services
 			if (match.Success)
 				return match.Value.TrimStart();
 			return null;
+		}
+
+		public IEnumerable<MenuItem> ParseAll(string content)
+		{
+			var lines = content.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+			return lines.Select(ParseLine);
 		}
 	}
 }
