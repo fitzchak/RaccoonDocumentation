@@ -88,6 +88,7 @@
     <Compile Include="ViewModels\DocumentationPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\SiteMarkdown.css" />
     <Content Include="Content\ResetCss.css" />
     <Content Include="Global.asax" />
     <Content Include="scripts\html5shim.js" />
