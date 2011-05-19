@@ -4,12 +4,7 @@ namespace RaccoonDocumentation.Web.Controllers
 {
 	public class DocumentationController : Controller
 	{
-		public ActionResult Index()
-		{
-			return View();
-		}
-
-		public ActionResult Menu()
+		public ActionResult Index(string slug)
 		{
 			return View();
 		}
