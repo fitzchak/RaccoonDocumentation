@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,11 +20,10 @@ namespace RaccoonDocumentation.Web
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-			routes.MapRoute(
-				"Default", // Route name
-				"{controller}/{action}/{id}", // URL with parameters
-				new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
-			);
+			routes.MapRoute("Default",
+			    "",
+			    new {controller = "Home", action = "Index", id = UrlParameter.Optional}
+				);
 
 		}
 
@@ -34,7 +32,7 @@ namespace RaccoonDocumentation.Web
 			AreaRegistration.RegisterAllAreas();
 
 			RegisterGlobalFilters(GlobalFilters.Filters);
-			RegisterRoutes(RouteTable.Routes);
+			new RouteConfigurator(RouteTable.Routes).Configure();
 		}
 	}
 }
